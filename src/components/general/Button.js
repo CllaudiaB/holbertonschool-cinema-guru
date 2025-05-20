@@ -6,7 +6,7 @@ function Button({
     label,
     className = '',
     onClick,
-    icon,
+    icon=null,
 }) {
     return (
         <div className={className}>

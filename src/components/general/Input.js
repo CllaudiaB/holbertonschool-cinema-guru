@@ -7,8 +7,8 @@ function Input({
     className,
     value,
     setValue,
-    icon,
-    inputAttributes,
+    icon=null,
+    inputAttributes={},
 }) {
     const handleInput = (event) => {
         setValue(event.target.value);
