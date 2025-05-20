@@ -1,4 +1,4 @@
-import { faUser, faKey } from "@fortawesome/free-solid-svg-icons";
+import { faUser, faKey, faPlus } from "@fortawesome/free-solid-svg-icons";
 import "./auth.css";
 import Input from "../../components/general/Input";
 import Button from "../../components/general/Button";
