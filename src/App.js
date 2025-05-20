@@ -2,11 +2,12 @@ import "./App.css";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Authentication from "./routes/auth/Authentication";
+import Dashboard from "./routes/dashboard/Dashboard";
 
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [userName, setUserName] = useState("");
+  const [userUsername, setUserUsername] = useState("");
 
   useEffect(() => {
     const accessToken = localStorage.getItem("accessToken");
@@ -20,7 +21,7 @@ function App() {
     })
       .then(response => {
         setIsLoggedIn(true);
-        setUserName(response.data.username);
+        setUserUsername(response.data.username);
       })
       .catch(error => {
         console.error(error);
@@ -29,7 +30,14 @@ function App() {
 
   return (
     <div className="App">
-      {isLoggedIn ? <Dashboard /> : <Authentication />}
+      {isLoggedIn ? (
+        <Dashboard userUsername={userUsername} setIsLoggedIn={setIsLoggedIn} />
+      ) : (
+        <Authentication
+          setIsLoggedIn={setIsLoggedIn}
+          setUserUsername={setUserUsername}
+        />
+      )}
     </div>
   );
 }
