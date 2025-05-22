@@ -1,0 +1,57 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: black;
+}
+
+/* General styles for the Authentication component */
+.auth-container {
+  width: 450px;
+  height: 361px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+}
+
+.auth-container h3 {
+  font-size: 19px;
+  font-weight: normal;
+  padding-top: 10px;
+  padding-bottom: 24px;
+  text-align: center;
+}
+
+/* Buttons at the top of the Authentication component*/
+.auth-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.auth-header button {
+  flex: 1; /* chaque bouton prend une part égale de l'espace disponible */
+  background-color: #e31c25;
+  padding: 12px;
+  border: none;
+  color: white;
+  font-size: 16px;
+}
+
+.auth-content {
+  padding: 20px 40px;
+}
+
+/* inputs in the Login and Register components*/
+.auth-inputs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 20px;
+}
+
+.auth-buttons {
+  display: flex;
+  justify-content: end;
+}

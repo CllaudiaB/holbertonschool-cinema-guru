@@ -1,35 +1,37 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React from 'react';
 import './general.css';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 function Input({
-    label,
-    type,
-    className,
-    value,
-    setValue,
-    icon=null,
-    inputAttributes={},
+  label,
+  type,
+  className,
+  value,
+  setValue,
+  icon,
+  inputAttributes = {},
 }) {
-    const handleInput = (event) => {
-        setValue(event.target.value);
-    };
+  function handleInput(event){
+    setValue(event.target.value);
+  };
 
-    return (
-        <div className={className}>
-            <label htmlFor={label}>
-                {icon && <FontAwesomeIcon icon={icon} />}
-                {label}
-            </label>
-            <input
-                type={type}
-                className={className}
-                value={value}
-                onChange={handleInput}
-                id={label}
-                {...inputAttributes}
-            />
-        </div>
-    );
-}
+  return (
+    <div className={className}>
+      <label htmlFor={label}>
+        {icon && <FontAwesomeIcon icon={icon} />}
+        {label}
+      </label>
+
+      <div className="input-inner">
+        <input
+          type={type}
+          value={value}
+          onChange={handleInput}
+          {...inputAttributes}
+        />
+      </div>
+    </div>
+  );
+};
 
 export default Input;
